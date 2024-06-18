@@ -1,0 +1,122 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 {
+            font-size: 48;
+        }
+        h3 {
+            font-size: 24;
+        }
+        ul > li {
+            font-size: 18;
+            font-weight: 500;
+        }
+        ul > li > ul > li {
+            font-size: 16;
+            font-weight: 400;
+            color: darkslategray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drawing With Code!</h1>
+    <h3>Learning Outcomes</h3>
+    <ul>
+        <li>Draw Shapes Using Code</li>
+    </ul>
+    <h3>Building Block Concepts</h3>
+    <ul>
+        <li>Objects</li>
+        <li>Functions</li>
+        <li>Varialbes</li>
+    </ul>
+    <h3>Topics</h3>
+    <ul>
+        <li>DOM
+            <ul>
+                <li>What is the DOM? (Document Object Model)</li>
+            </ul>
+        </li>
+        <li>Canvas Element
+            <ul>
+                <li>What is the canvas element?</li>
+            </ul>
+        </li>
+        <li>Variables
+            <ul>
+                <li>Accessing the DOM using variables</li>
+            </ul>
+        </li>
+        <li>Functions
+            <ul>
+                <li>Using functions to draw shapes</li>
+            </ul>
+        </li>
+        <li>API Documentation
+            <ul>
+                <li>How to use documentation</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<!--
+    canvas tag
+    this tag is used to create a canvas object which has functions that allow you to draw shapes
+-->
+<canvas id="myCanvas" width="500" height="500" style="border:5px solid rgb(199, 238, 238); background-color: rgb(55, 129, 161);">
+
+</canvas>
+
+<!-- 
+    script tag
+    this tag is used anytime you want to write javascript code
+    just write the javascript code inside the open and close script tag
+-->
+<script>
+    //declare a variable named "myContext" and assign the context 2d object to the variable
+    const myContext = document.getElementById("myCanvas").getContext("2d");
+
+    //draw square
+    document.getElementById("myCanvas").getContext("2d").beginPath();
+    document.getElementById("myCanvas").getContext("2d").rect(50, 50, 100, 100);
+    document.getElementById("myCanvas").getContext("2d").fillStyle = "red";
+    document.getElementById("myCanvas").getContext("2d").fill();
+    document.getElementById("myCanvas").getContext("2d").lineWidth = 20;
+    document.getElementById("myCanvas").getContext("2d").strokeStyle = "violet";
+    document.getElementById("myCanvas").getContext("2d").stroke();
+
+    //draw circle
+    document.getElementById("myCanvas").getContext("2d").beginPath();
+    document.getElementById("myCanvas").getContext("2d").arc(400, 100, 50, 0, Math.PI * 2);
+    document.getElementById("myCanvas").getContext("2d").fillStyle = "yellow";
+    document.getElementById("myCanvas").getContext("2d").fill();
+    document.getElementById("myCanvas").getContext("2d").lineWidth = 20;
+    document.getElementById("myCanvas").getContext("2d").strokeStyle = "black";
+    document.getElementById("myCanvas").getContext("2d").stroke();
+
+    //draw triangle
+    /*
+        instead of writing out the whole "document.getElementById("myCanvas").getContext("2d")"
+        we call the variable named "myContext" that we declared above
+    */
+    myContext.beginPath();
+    myContext.moveTo(150, 350);
+    myContext.lineTo(250, 200);
+    myContext.lineTo(350, 350);
+    myContext.closePath();
+    myContext.fillStyle = "cyan";
+    myContext.fill();
+    myContext.lineWidth = 10;
+    myContext.strokeStyle = "white";
+    myContext.stroke();
+
+</script>
+</html>
